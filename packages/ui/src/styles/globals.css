@@ -52,24 +52,24 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    --background: oklch(0.992 0.01 67);
+    --foreground: oklch(0.19 0.02 42);
+    --card: oklch(0.998 0.004 67);
+    --card-foreground: oklch(0.19 0.02 42);
+    --popover: oklch(0.998 0.004 67);
+    --popover-foreground: oklch(0.19 0.02 42);
+    --primary: oklch(0.68 0.2 42);
+    --primary-foreground: oklch(0.99 0.005 67);
+    --secondary: oklch(0.965 0.012 67);
+    --secondary-foreground: oklch(0.24 0.02 42);
+    --muted: oklch(0.972 0.01 67);
+    --muted-foreground: oklch(0.5 0.02 42);
+    --accent: oklch(0.95 0.03 58);
+    --accent-foreground: oklch(0.24 0.02 42);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --border: oklch(0.91 0.012 67);
+    --input: oklch(0.91 0.012 67);
+    --ring: oklch(0.72 0.17 42);
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -87,24 +87,24 @@
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
+    --background: oklch(0.16 0.01 260);
+    --foreground: oklch(0.97 0.01 67);
+    --card: oklch(0.2 0.012 260);
+    --card-foreground: oklch(0.97 0.01 67);
+    --popover: oklch(0.2 0.012 260);
+    --popover-foreground: oklch(0.97 0.01 67);
+    --primary: oklch(0.72 0.18 42);
+    --primary-foreground: oklch(0.16 0.01 260);
+    --secondary: oklch(0.27 0.012 260);
+    --secondary-foreground: oklch(0.97 0.01 67);
+    --muted: oklch(0.25 0.012 260);
+    --muted-foreground: oklch(0.78 0.01 67);
+    --accent: oklch(0.28 0.02 42);
+    --accent-foreground: oklch(0.97 0.01 67);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
+    --ring: oklch(0.72 0.18 42);
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -124,7 +124,63 @@
   * {
     @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
     }
+  body {
+    @apply bg-background text-foreground antialiased;
+    }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 25%, white);
+    color: var(--foreground);
+    }
+}
+
+@layer components {
+  .cnvr-panel {
+    @apply rounded-[1.75rem] border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-900;
+  }
+
+  .cnvr-soft-panel {
+    @apply rounded-[1.75rem] border border-orange-100 bg-orange-50 p-5 dark:border-orange-500/20 dark:bg-orange-500/10;
+  }
+
+  .cnvr-output-panel {
+    @apply rounded-[1.75rem] border border-slate-200 bg-slate-950 p-5 text-slate-50 dark:border-white/10 dark:bg-slate-950;
+  }
+}
+
+@layer utilities {
+  .dark .bg-white {
+    background-color: oklch(0.2 0.012 260);
+  }
+
+  .dark .bg-orange-50 {
+    background-color: oklch(0.28 0.03 42 / 0.35);
+  }
+
+  .dark .border-slate-200 {
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .dark .border-orange-100 {
+    border-color: rgb(249 115 22 / 0.2);
+  }
+
+  .dark .text-slate-950 {
+    color: rgb(248 250 252);
+  }
+
+  .dark .text-slate-900 {
+    color: rgb(248 250 252);
+  }
+
+  .dark .text-slate-700 {
+    color: rgb(226 232 240);
+  }
+
+  .dark .text-slate-600,
+  .dark .text-slate-500 {
+    color: rgb(148 163 184);
+  }
 }
