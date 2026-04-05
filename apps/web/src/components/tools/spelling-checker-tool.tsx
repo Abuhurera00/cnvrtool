@@ -53,7 +53,7 @@ export function SpellingCheckerTool() {
           <Button onClick={() => void checkSpelling()}>Check spelling</Button>
           <p className="text-sm leading-7 text-slate-600">{status}</p>
         </div>
-        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6">
+        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 overflow-auto h-[430px]">
           <p className="text-sm font-semibold text-slate-900">Suggestions</p>
           <div className="mt-5 space-y-3">
             {issues.length ? (
