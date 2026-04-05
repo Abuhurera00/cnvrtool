@@ -5,6 +5,8 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "build:server": "turbo run build --filter=server",
+    "start:server": "turbo run dev --filter=server",
     "lint": "turbo lint",
     "format": "turbo format",
     "typecheck": "turbo typecheck"
