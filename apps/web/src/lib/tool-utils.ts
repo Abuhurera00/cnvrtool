@@ -156,10 +156,7 @@ export function escapeHtml(value: string) {
 }
 
 export function textToHtml(text: string) {
-  return escapeHtml(text)
-    .split(/\n{2,}/)
-    .map((block) => `<p>${block.replaceAll("\n", "<br />")}</p>`)
-    .join("\n")
+  return escapeHtml(text.replace(/\r\n/g, "\n")).split("\n").join("<br />\n")
 }
 
 export function generateSeoTags(params: {

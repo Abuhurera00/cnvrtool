@@ -16,7 +16,7 @@ export function TextToHtmlTool() {
     <ToolPageShell
       badge="Website Tool"
       title="Text to HTML Generator"
-      description="Convert plain text into HTML paragraphs while keeping line breaks readable."
+      description="Convert text into HTML-ready output while preserving every line break with explicit br tags."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="cnvr-soft-panel">
@@ -27,7 +27,7 @@ export function TextToHtmlTool() {
             placeholder="Enter your text"
           />
         </div>
-        <div className="rounded-[1.75rem] border border-slate-200 bg-slate-950 p-5 text-slate-50">
+        <div className="cnvr-output-panel">
           <div className="flex items-center justify-between gap-3">
             <p className="text-sm font-semibold">HTML output</p>
             <Button
