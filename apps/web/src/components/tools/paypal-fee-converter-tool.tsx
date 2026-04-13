@@ -58,7 +58,7 @@ export function PaypalFeeConverterTool() {
             </SelectContent>
           </Select>
           <div className="rounded-xl border border-orange-200 bg-white px-4 py-3 text-sm text-slate-600 dark:border-orange-500/20 dark:bg-slate-950 dark:text-slate-300">
-            Standard fee used: {percentage}% + {symbol}
+            Standard fee: {percentage}% + {symbol}
             {formatNumber(fixed)}
           </div>
         </div>
