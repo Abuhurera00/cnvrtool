@@ -70,12 +70,12 @@ export function EventSchemaTool() {
             <DatePickerField
               placeholder="Start date"
               value={form.startDate}
-              onChange={(value) => setForm((c) => ({ ...c, startDate: value }))}
+              onChange={(value) => setForm((c) => ({ ...c, startDate: value ?? c.startDate }))}
             />
             <DatePickerField
               placeholder="End date"
               value={form.endDate}
-              onChange={(value) => setForm((c) => ({ ...c, endDate: value }))}
+              onChange={(value) => setForm((c) => ({ ...c, endDate: value ?? c.endDate }))}
             />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
