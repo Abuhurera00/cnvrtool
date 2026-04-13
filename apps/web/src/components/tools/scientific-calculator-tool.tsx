@@ -60,9 +60,6 @@ export function ScientificCalculatorTool() {
     >
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="mx-auto w-full max-w-sm rounded-[2rem] border border-orange-100 bg-white p-5 shadow-[0_18px_60px_rgba(249,115,22,0.12)] dark:border-orange-500/20 dark:bg-slate-900">
-          <p className="mb-4 text-center text-base font-semibold text-slate-950 dark:text-slate-50">
-            Hi, you can use our scientific calculator tool for free.
-          </p>
           <div className="rounded-[1.25rem] border border-slate-300 bg-slate-50 p-3 shadow-inner dark:border-white/10 dark:bg-slate-950">
             <Input
               value={expression}
